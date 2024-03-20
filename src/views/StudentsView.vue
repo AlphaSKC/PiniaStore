@@ -17,6 +17,7 @@ const deleteProject = async(id: number) => {
     if(confirmDelete){
         await studentStore.deleteStudent(id.toString());
         students.value = studentStore.students;
+        location.reload();
     }
 };
 </script>
@@ -37,7 +38,6 @@ const deleteProject = async(id: number) => {
 <style scoped>
 .list {
     counter-reset: li;
-    width: 100%;
     list-style: none;
     font: 1.5rem 'trebuchet MS', 'lucida sans';
     padding: 0;
